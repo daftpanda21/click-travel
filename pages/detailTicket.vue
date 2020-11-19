@@ -18,47 +18,30 @@
           </div>
         </div>
         <div class="row bodyTicket">
-            <div>
-              <p class="Text1">Passenger</p>
-              <p class="Text2">{{ ticketInfo.passenger }}</p>
-            </div>
+          <div>
+            <p class="Text1">Passenger</p>
+            <p class="Text2">{{ ticketInfo.passenger }}</p>
+          </div>
 
-            <div class="row">
-              <div>
-                <p class="Text1">Flight</p>
-                <p>{{ ticketInfo.flight }}</p>
-              </div>
-              <div>
-                <p class="Text1">From</p>
-                <p>{{ ticketInfo.from }}</p>
-              </div>
-              <div>
-                <p class="Text1">To</p>
-                <p>{{ ticketInfo.to }}</p>
-              </div>
-              <div>
-                <p class="Text1">Class</p>
-                <p>{{ ticketInfo.class }}</p>
-              </div>
-            </div>
-            <div class="row">
-              <div>
-                <p class="Text1">Gate</p>
-                <p>{{ ticketInfo.gate }}</p>
-              </div>
-              <div>
-                <p class="Text1">Time</p>
-                <p>{{ ticketInfo.time }}</p>
-              </div>
-              <div>
-                <p class="Text1">Seat</p>
-                <p>{{ ticketInfo.seat }}</p>
-              </div>
+          <div class="row">
+            <div>
+              <p class="Text1">Flight</p>
+              <p>{{ ticketInfo.flight }}</p>
             </div>
             <div>
-              <p class="Text1">Passenger</p>
-              <p>{{ ticketInfo.passenger }}</p>
+              <p class="Text1">From</p>
+              <p>{{ ticketInfo.from }}</p>
             </div>
+            <div>
+              <p class="Text1">To</p>
+              <p>{{ ticketInfo.to }}</p>
+            </div>
+            <div>
+              <p class="Text1">Class</p>
+              <p>{{ ticketInfo.class }}</p>
+            </div>
+          </div>
+          <div class="row">
             <div>
               <p class="Text1">Gate</p>
               <p>{{ ticketInfo.gate }}</p>
@@ -71,6 +54,22 @@
               <p class="Text1">Seat</p>
               <p>{{ ticketInfo.seat }}</p>
             </div>
+          </div>
+          <div>
+            <p class="Text1">Passenger</p>
+            <p>{{ ticketInfo.passenger }}</p>
+          </div>
+          <div>
+            <p class="Text1">Gate</p>
+            <p>{{ ticketInfo.gate }}</p>
+          </div>
+          <div>
+            <p class="Text1">Time</p>
+            <p>{{ ticketInfo.time }}</p>
+          </div>
+          <div>
+            <p class="Text1">Seat</p>
+            <p>{{ ticketInfo.seat }}</p>
           </div>
         </div>
         <div class="row footerTicket"></div>
@@ -95,7 +94,7 @@ export default {
   }),
   created() {
     if (this.$route.params.ticket === undefined) {
-       this.$router.push('/')
+      this.$router.push('/')
     }
     console.log(this.$route.params.ticket)
   },
@@ -103,7 +102,6 @@ export default {
 </script>
 
 <style lang="scss">
-
 .Text1 {
   color: grey;
 }

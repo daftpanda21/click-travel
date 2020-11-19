@@ -5,10 +5,15 @@
     </div>
     <div class="content">
       <div>
-        <a v-for="item in tickets" class="giant-button" style="margin: 5px">
-          {{ item.flight }} - to : {{ item.to }} </a
+        <a
+          @click="clickTicket(item)"
+          v-for="item in tickets"
+          class="giant-button"
+          style="margin: 5px"
         >
-        <h1 v-if="!tickets.length"> No tickets for this destination  </h1>
+          {{ item.flight }} - to : {{ item.to }}
+        </a>
+        <h1 v-if="!tickets.length">No tickets for this destination</h1>
       </div>
     </div>
   </div>
@@ -20,9 +25,13 @@ export default {
   computed: mapGetters({
     tickets: 'getTickets',
   }),
-  created() {
+  methods: {
+    clickTicket(ticket) {
+      this.$router.push({ name: 'detailTicket', params: { ticket: ticket } })
+    },
+}, created() {
     this.$store.dispatch('getTickets', this.$route.query.code)
-  },
+  }
 }
 </script>
 

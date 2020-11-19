@@ -13,7 +13,7 @@
               @click="clickbtn(item.code)"
               v-for="item in dreamDestination"
               class="giant-button"
-              style="margin: 5px"
+              style="margin: 2px"
             >
               {{ item.name }}</a
             >

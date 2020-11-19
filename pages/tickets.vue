@@ -5,20 +5,10 @@
     </div>
     <div class="content">
       <div>
-        <h1 class="title">Choose your dream destination...</h1>
-
-        <div class="row">
-          <div>
-            <a
-              @click="clickbtn(item.code)"
-              v-for="item in dreamDestination"
-              class="giant-button"
-              style="margin: 5px"
-            >
-              {{ item.name }}</a
-            >
-          </div>
-        </div>
+        <a v-for="item in tickets" class="giant-button" style="margin: 5px">
+          {{ item.flight }} - to : {{ item.to }} </a
+        >
+        <h1 v-if="!tickets.length"> No tickets for this destination  </h1>
       </div>
     </div>
   </div>
@@ -28,12 +18,10 @@
 import { mapGetters } from 'vuex'
 export default {
   computed: mapGetters({
-    dreamDestination: 'getDreamDestination',
+    tickets: 'getTickets',
   }),
-  methods: {
-    clickbtn(destination) {
-      this.$router.push({ name: 'tickets', query: { code: destination } })
-    },
+  created() {
+    this.$store.dispatch('getTickets', this.$route.query.code)
   },
 }
 </script>

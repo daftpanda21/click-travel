@@ -1,4 +1,5 @@
 export default () => ({
+  tickets: [Object],
   dreamDestination: [
     {
       name: 'Bora Bora, Polynésie',
